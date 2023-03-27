@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.control-buttons {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(3, 169, 244, 0.9);
+}
+.end{
+        text-align: center;
+    color: #2196f3;
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+.control-buttons span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F44336;
+    color: #FFF;
+    padding: 15px 25px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.info-container {
+    width: 1080px;
+    background-color: #f6f6f6;
+    border: 2px solid #2196f3;
+    padding: 20px;
+    margin: 20px auto 0;
+    font-size: 24px;
+    overflow: hidden;
+}
+
+.info-container .name {
+    float: left;
+    width: 50%;
+}
+
+.info-container .tries {
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+
+.memory-container-blocks {
+    width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+.memory-container-blocks.clicking{
+    pointer-events: none;
+}
+
+.memory-container-blocks .game-block {
+    height: 200px;
+    transition: transform .5s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    flex: 1 0 200px;
+    margin: 0 10px 20px;
+}
+
+.memory-container-blocks .game-block .front {
+    background-color: #333;
+    line-height: 200px;
+}
+.memory-container-blocks .game-block .front::before {
+    content: "!";
+    font-size: 150px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.memory-container-blocks .game-block .back {
+    background-color: #607D8B;
+    transform: rotateY(180deg);
+}
+
+.memory-container-blocks .game-block .back img {
+    width: 190px;
+    height: 190px;
+}
+.memory-container-blocks .game-block .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    backface-visibility: hidden;
+    border: 5px solid #2196F3;
+}
+.memory-container-blocks .game-block.is-flipped,
+.memory-container-blocks .game-block.has-match {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    pointer-events: none;
+}
+.footer{
+    width: 1080px;
+    background-color: #f6f6f6;
+    border: 2px solid #2196f3;
+    padding: 20px;
+    margin: 20px auto 0;
+    font-size: 24px;
+    overflow: hidden;
+}
