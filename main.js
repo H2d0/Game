@@ -29,6 +29,9 @@ document.querySelector(".control-buttons span").onclick = function () {
             //  footer.style.display = "block"
 
             clearTimeout(timer);
+            setTimeout(() => {
+                window.location.reload()
+            }, 5000)
 
             blocks.forEach((block) => {
                 block.classList.add("is-flipped");
